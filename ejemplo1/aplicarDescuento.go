@@ -1,20 +1,20 @@
-package main
+package discount
 
 type DiscountCalculator struct {
-	minimumPurchaseAmount int
-	discountAmount        int
+	MinimumPurchaseAmount int
+	DiscountAmount        int
 }
 
-func NewDiscountCalculator(minimumPurchaseAmount int, discountAmount int) *DiscountCalculator {
+func NewDiscountCalculator(MinimumPurchaseAmount int, DiscountAmount int) *DiscountCalculator {
 	return &DiscountCalculator{
-		minimumPurchaseAmount: minimumPurchaseAmount,
-		discountAmount:        discountAmount,
+		MinimumPurchaseAmount: MinimumPurchaseAmount,
+		DiscountAmount:        DiscountAmount,
 	}
 }
 
 func (c *DiscountCalculator) Calculate(purchaseAmount int) int {
-	if purchaseAmount > c.minimumPurchaseAmount {
-		return purchaseAmount - c.discountAmount
+	if purchaseAmount > c.MinimumPurchaseAmount {
+		return purchaseAmount - c.DiscountAmount
 	}
 	return purchaseAmount
 }

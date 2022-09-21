@@ -1,9 +1,13 @@
-package main_test
+package discount_test
 
-import "testing"
+import (
+	"testing"
+
+	discount "github.com/JoakoMeLi/20-09-ejemplos-testing/ejemplo1"
+)
 
 func TestDiscountApplied(t *testing.T) {
-	calculator := NewDiscountCalculator(100, 20)
+	calculator := discount.NewDiscountCalculator(100, 20)
 	amount := calculator.Calculate(150)
 
 	if 130 != amount {
@@ -12,7 +16,7 @@ func TestDiscountApplied(t *testing.T) {
 }
 
 func TestDiscountNotApplied(t *testing.T) {
-	calculator := NewDiscountCalculator(100, 20)
+	calculator := discount.NewDiscountCalculator(100, 20)
 	amount := calculator.Calculate(50)
 
 	if 50 != amount {
